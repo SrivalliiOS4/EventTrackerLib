@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "EventTrackerLib"
-  spec.version      = "1.0"
+  spec.version      = "2.0"
   spec.summary      = "A CocoaPods library written in Swift"
   spec.description  = <<-DESC
 This CocoaPods library helps you to track some simple events.
