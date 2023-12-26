@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 public class EventTracker {
     
@@ -60,18 +59,13 @@ public class EventTracker {
     
     private func getDeviceInformationEvents() -> TrackerDeviceDetails {
         /// Form device details struct and return it.
-        let udid = UIDevice.current.identifierForVendor?.uuidString ?? ""
-        let model = UIDevice.current.localizedModel
-        let osVersion = "\(UIDevice.current.systemName) - \(UIDevice.current.systemVersion)"
-        let screenWidth = UIScreen.main.bounds.width
-        let screenHeight = UIScreen.main.bounds.height
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
         let appBuildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""
         return TrackerDeviceDetails(udid: udid,
-                                    iOSVersion: osVersion,
-                                    model: model,
+                                    iOSVersion: deviceVersion,
+                                    model: deviceModel,
                                     screenWidth: screenWidth,
-                                    screenHeight: screenHeight,
+                                    screenHeight: screenWidth,
                                     appVersion: appVersion,
                                     appBuildNumber: appBuildNumber)
     }
